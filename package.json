@@ -1,0 +1,26 @@
+{
+  "name": "moment-readable",
+  "version": "0.0.0",
+  "description": "Readble time formats for moment. A moment plugin",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/cosmozhang1995/moment-readable.git"
+  },
+  "author": "cosmozhang1995",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/cosmozhang1995/moment-readable/issues"
+  },
+  "homepage": "https://github.com/cosmozhang1995/moment-readable",
+  "dependencies": {
+    "grunt": "0.x",
+    "grunt-contrib-watch": "0.x",
+    "grunt-contrib-coffee": "0.x",
+    "grunt-contrib-jasmine": "0.x",
+    "moment": "*"
+  }
+}

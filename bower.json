@@ -1,0 +1,27 @@
+{
+  "name": "moment-readable",
+  "version": "0.0.0",
+  "homepage": "https://github.com/cosmozhang1995/moment-readable",
+  "authors": [
+    "cosmozhang1995 <cosmozhang1995@gmail.com>"
+  ],
+  "description": "Readble time formats for moment. A moment plugin",
+  "main": "lib/moment-readable.js",
+  "keywords": [
+    "moment",
+    "readable"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "spec",
+    "node_modules",
+    "vendor",
+    "Gruntfile.coffee",
+    "package.json",
+    "README.md"
+  ],
+  "dependencies": {
+    "moment": "*"
+  }
+}
