@@ -1,8 +1,3 @@
-if require?
-	moment = require('moment');
-else
-	moment = this.moment;
-
 moment.readable = (date, type, opts) ->
 	return date.readableDate(opts) if type is 'date'
 	return ''
@@ -20,6 +15,7 @@ moment.readable.locales =
 		lastWeekdays: ['Last Sunday', 'Last Monday', 'Last Tuesday', 'Last Wednesday', 'Last Thursday', 'Last Friday', 'Last Saturday']
 		defaultFormat: 'MMM Do'
 		defaultFormatWithYear: 'MMM Do, YYYY'
+		rightNow: 'Right now'
 	"zh-cn":
 		yesterday: '昨天'
 		tomorrow: '明天'
@@ -32,6 +28,7 @@ moment.readable.locales =
 		lastWeekdays: ['上周日', '上周一', '上周二', '上周三', '上周四', '上周五', '上周六']
 		defaultFormat: 'M月D日'
 		defaultFormatWithYear: 'YYYY年M月D日'
+		rightNow: '刚刚'
 
 moment.readable.defineLocal = (locale_abbr, opts) ->
 	defaultOpts =
@@ -97,7 +94,20 @@ moment.fn.readableDate = (opts) ->
 		return date.format(locale.defaultFormatWithYear)
 	return date.format(locale.defaultFormat || locale.defaultFormatWithYear)
 
-if module?
-	module.exports = moment
-else
-	this.moment = moment
+moment.fn.readableTime = () ->
+	return '' unless this.isValid()
+
+	now = moment()
+	if this._z
+		now = now.tz(this._z)
+
+	locale = moment.readable.getLocale()
+
+	yesterday = now.clone().add('day', -1)
+
+	return locale.rightNow if (now.diff(this) < 1)
+	return this.fromNow() if now.isSame(this, 'day')
+	return locale.yesterday if yesterday.isSame(this, 'day')
+	return this.readableDate()
+	return this.format(locale.defaultFormatWithYear) unless this.isSame(now, 'year')
+	return this.format(locale.defaultFormat || locale.defaultFormatWithYear)
