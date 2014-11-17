@@ -22,6 +22,7 @@
     "grunt-contrib-coffee": "0.x",
     "grunt-contrib-jasmine": "0.x",
     "grunt-umd": "2.x",
-    "moment": "*"
+    "moment": "*",
+    "moment-timezone": "*"
   }
 }

@@ -92,10 +92,10 @@
     twoHour = now.clone().add('hour', -2);
     yesterday = now.clone().add('day', -1).endOf('day');
     return it('should format moment into a readable time for human, current time must be after 2:00 AM', function() {
-      expect(twoSec.readableTime().toEqual('2秒前'));
-      expect(twoMin.readableTime().toEqual('2分钟前'));
-      expect(twoHour.readableTime().toEqual('2小时前'));
-      return expect(yesterday.readableTime().toEqual('昨天'));
+      expect(twoSec.readableTime()).toEqual('几秒前');
+      expect(twoMin.readableTime()).toEqual('2分钟前');
+      expect(twoHour.readableTime()).toEqual('2小时前');
+      return expect(yesterday.readableTime()).toEqual('昨天');
     });
   });
 

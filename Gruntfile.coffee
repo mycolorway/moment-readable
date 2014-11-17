@@ -1,5 +1,8 @@
 module.exports = (grunt) ->
 
+  dir_moment_timezone = 'bower_components/moment-timezone/'
+  path_moment_timezone = 'bower_components/moment-timezone/' + grunt.file.readJSON(dir_moment_timezone + 'bower.json').main
+
   grunt.initConfig
 
     pkg: grunt.file.readJSON 'package.json'
@@ -36,7 +39,8 @@ module.exports = (grunt) ->
           specs: 'spec/readable-spec.js'
           vendor: [
             'bower_components/moment/moment.js',
-            'bower_components/moment/locale/zh-cn.js'
+            'bower_components/moment/locale/zh-cn.js',
+            path_moment_timezone
           ]
 
     umd:

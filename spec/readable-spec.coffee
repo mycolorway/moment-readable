@@ -2,6 +2,7 @@ moment.locale('zh-cn')
 
 describe 'readableDate', ->
 	date = moment()
+	# date.tz('America/New_York')
 	today = date.clone().startOf('day')
 	yesterday = date.clone().add('day', -1)
 	tomorrow = date.clone().add('day', 1)
@@ -85,6 +86,7 @@ describe 'readableDate', ->
 
 describe 'readableTime', ->
 	now = moment()
+	# now.tz('America/New_York')
 	twoSec = now.clone().add('second', -2)
 	twoMin = now.clone().add('minute', -2)
 	twoHour = now.clone().add('hour', -2)
