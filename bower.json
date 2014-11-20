@@ -22,7 +22,7 @@
     "README.md"
   ],
   "dependencies": {
-    "moment": "2.8.1",
-    "moment-timezone": "0.2.1"
+    "moment": "~2.8.1",
+    "moment-timezone": "~0.2.1"
   }
 }
