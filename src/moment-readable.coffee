@@ -54,8 +54,8 @@ moment.fn.readableDate = (opts) ->
 
   defaultOpts =
     defaultFormat: false
-    currentWeek: false
-    nextWeek: false
+    currentWeek: true
+    nextWeek: true
     lastWeek: false
 
   defaultOpts[key] = val for key, val of opts
