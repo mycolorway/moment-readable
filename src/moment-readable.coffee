@@ -22,6 +22,7 @@ moment.readable =
       lastWeekdays: ("Last #{ day }" for day in weekdays)
       defaultFormat: 'MMM Do'
       defaultFormatWithYear: 'MMM Do, YYYY'
+      justNow: 'just now'
     "zh-cn":
       yesterday: '昨天'
       tomorrow: '明天'
@@ -34,6 +35,7 @@ moment.readable =
       lastWeekdays: ['上周日', '上周一', '上周二', '上周三', '上周四', '上周五', '上周六']
       defaultFormat: 'M月D日'
       defaultFormatWithYear: 'YYYY年M月D日'
+      justNow: '刚刚'
 
 moment.readable.defineLocale = (abbr, values) ->
   locale = moment.readable.locales[abbr]
@@ -108,6 +110,7 @@ moment.fn.readableTime = (opts) ->
 
   locale = moment.readable.localeData(this.locale())
 
+  return locale.justNow if now.diff(this, 'minutes') < 1
   return this.fromNow() if now.isSame(this, opts.threshold)
   return locale.yesterday if yesterday.isSame(this, 'day')
   return this.format(locale.defaultFormat) if this.isSame(now, 'year')

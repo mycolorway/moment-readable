@@ -64,7 +64,7 @@
       minute = now.clone().add(-2, 'minute');
       hour = now.clone().add(-2, 'hour');
       yesterday = now.clone().add(-1, 'day').endOf('day');
-      expect(second.readableTime()).toEqual('几秒前');
+      expect(second.readableTime()).toEqual('刚刚');
       expect(minute.readableTime()).toEqual('2分钟前');
       expect(hour.readableTime()).toEqual('2小时前');
       return expect(yesterday.readableTime()).toEqual('昨天');
