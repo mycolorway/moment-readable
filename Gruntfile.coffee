@@ -45,7 +45,7 @@ module.exports = (grunt) ->
         src: 'lib/moment-readable.js'
         template: 'umd.hbs'
         amdModuleId: 'moment-readable'
-        objectToExport: 'readable'
+        objectToExport: 'moment'
         globalAlias: 'readable'
         deps:
           'default': ['moment']
