@@ -63,8 +63,8 @@ describe 'readableTime', ->
     yesterday = now.clone().add(-1, 'day').endOf('day')
 
     expect(second.readableTime()).toEqual('刚刚')
-    expect(minute.readableTime()).toEqual('2分钟前')
-    expect(hour.readableTime()).toEqual('2小时前')
+    expect(minute.readableTime()).toEqual('2 分钟前')
+    expect(hour.readableTime()).toEqual('2 小时前')
     expect(yesterday.readableTime()).toEqual('昨天')
 
   it 'should work all right with timezone', ->
@@ -73,7 +73,7 @@ describe 'readableTime', ->
     minute = now.clone().add(-2, 'minute')
     yesterday = now.clone().add(-1, 'day').endOf('day')
 
-    expect(minute.readableTime()).toEqual('2分钟前')
+    expect(minute.readableTime()).toEqual('2 分钟前')
     expect(yesterday.readableTime()).toEqual('昨天')
 
   it 'should work all right when change threshold', ->
@@ -82,7 +82,7 @@ describe 'readableTime', ->
 
     expect(hour.readableTime({
       threshold: 'minute'
-    })).not.toEqual('2小时前')
+    })).not.toEqual('2 小时前')
 
   it 'should work all right when change locale', ->
     now = moment()
