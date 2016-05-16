@@ -10,8 +10,7 @@
     // like Node.
     module.exports = factory({{{cjsDependencies.wrapped}}});
   } else {
-    root.moment = root.moment || {};
-    {{#if globalAlias}}root.moment['{{{globalAlias}}}'] = {{else}}{{#if objectToExport}}root['{{{objectToExport}}}'] = {{/if}}{{/if}}factory({{{globalDependencies.normal}}});
+    root.moment = factory({{{objectToExport}}});
   }
 }(this, function ({{dependencies}}) {
 
