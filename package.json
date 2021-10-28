@@ -1,6 +1,6 @@
 {
   "name": "moment-readable",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Readble time formats for moment. A moment plugin",
   "main": "lib/moment-readable.js",
   "scripts": {
@@ -24,7 +24,7 @@
     "grunt-umd": "2.x"
   },
   "peerDependencies": {
-    "moment": "2.22.2",
-    "moment-timezone": "^0.5.21"
+    "moment": "2.29.1",
+    "moment-timezone": "^0.5.33"
   }
 }
